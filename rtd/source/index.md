@@ -4,7 +4,7 @@ This guide explains in a step-by-step approach the recommended way to install th
 
 The simulations within the MotorModel package use MISO, which is a C++ software library built on MFEM. Before continuing, MISO must be completely built, as well as MFEM and other dependencies.
 
-Go to [Insert Link] to find a guide on setting up MISO. It is strongly recommended that everything listed within this guide is built in one folder so that the eventual Python environment will be able to find all of the installed dependencies.
+Go to [MISO Installation](https://miso-installation.readthedocs.io/en/latest/) to find a guide on setting up MISO. It is strongly recommended that all downloads and builds are completed in one folder so that the eventual Python environment will be able to find all of the installed dependencies. This guide assumes that the formatting is the same as what's recommended in the MISO guide.
 
 Some of the tests contained within MotorModel require the use of SNOPT, which, unlike the other dependencies for this package, is not open-source, and must be purchased. See the [SNOPT Website](http://www.sbsi-sol-optimize.com/asp/sol_product_snopt.htm) for more information.
 
@@ -12,11 +12,11 @@ Some of the tests contained within MotorModel require the use of SNOPT, which, u
 
 While the supporting MFEM and MISO libraries are made in C++, the code that is used to run an analysis is written in Python. Any work with Python must come after all of the above dependencies are installed.
 
-Python must be installed as a systems package. Another package, patch, is also required to install one of the dependencies. Patch is included with WSL [confirm information], but may need to be manually installed if you are using another platform.
+Python must be installed as a systems package. Another package, patch, is also required to install one of the dependencies. Patch is included with WSL, but may need to be manually installed if you are using another platform.
 
 ```
-sudo apt-get install python
-sudo apt-get install patch
+sudo apt install python
+sudo apt install patch
 ```
 
 ## Environment Setup
@@ -30,11 +30,11 @@ python -m venv source /[path_to_motor_folder]/python
 source /[path_to_motor_folder]/python/bin/activate
 ```
 
-The source command must be repeated on each PC reboot, if Python needs to be used.
+The source command must be repeated on each PC reboot, when Python is being used.
 
 ## Dependency Downloads and Installations
 
-MotorModel, mphys, and omESP must all be downloaded and installed in the Python environment, and MISO must have its Python layer installed as well.
+MotorModel, along with dependencies mphys and omESP, must be downloaded and installed within the Python environment, and MISO must have its Python layer installed as well.
 
 Enter the terminal and navigate to the motor folder. Use the following lines of code to download and install the various Python-based dependencies.
 
@@ -65,7 +65,7 @@ cd ../..
 
 ## Building PyOptSparse
 
-PyOptSparse is the final installation for Python. This installation requires SNOPT. If SNOPT is not available, then the next step can not be completed. SNOPT is used for large-scale optimization problems, so it may be possible to use another package that has similar capabilities. The MotorModel tests and the below code assume that SNOPT is used, and they are not guaranteed to function with an alternative package.
+PyOptSparse is the final installation for Python. This installation requires SNOPT. If SNOPT is not available, then the next step can not be completed. SNOPT is used for large-scale optimization problems, so it may be possible to use another package that has similar capabilities. The MotorModel tests and the below code assume that SNOPT is used, and they are not guaranteed to function properly with an alternative package.
 
 When SNOPT is acquired, the files must be placed in the motor folder so as to be used by the Python environment.
 
@@ -81,4 +81,4 @@ cd ..
 
 ## Running an Analysis
 
-[Info TBA]
+At this time, there is an error preventing the running of an analysis. Further instructions will be added when the issue has been corrected.
