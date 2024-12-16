@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'MotorModel Setup'
-copyright = 
-author = 
+copyright = 'TBA'
+author = 'TBA'
 
 release = '0.1'
 version = '0.1.0'
