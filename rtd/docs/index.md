@@ -4,7 +4,7 @@ This guide explains in a step-by-step approach the recommended way to install th
 
 The simulations within the MotorModel package use MISO, which is a C++ software library built on MFEM. Before continuing, MISO must be completely built, as well as MFEM and other dependencies.
 
-Go to [MISO Installation](https://miso-installation.readthedocs.io/en/latest/) to find a guide on setting up MISO. It is strongly recommended that all downloads and builds are completed in one folder so that the eventual Python environment will be able to find all of the installed dependencies. This guide assumes that the formatting is the same as what's recommended in the MISO guide.
+Go to [MISO Installation](https://miso-installation.readthedocs.io/en/latest/) to find a guide on setting up MISO. It is strongly recommended that all downloads and builds are completed in one folder so that the eventual Python environment will be able to find all of the installed dependencies. This guide assumes that the formatting is the same as what's recommended in the MISO guide. If you use this guide, make sure that MISO has its Python wrapper built by following the instructions.
 
 Some of the tests contained within MotorModel require the use of SNOPT, which, unlike the other dependencies for this package, is not open-source, and must be purchased. See the [SNOPT Website](http://www.sbsi-sol-optimize.com/asp/sol_product_snopt.htm) for more information.
 
@@ -12,10 +12,12 @@ Some of the tests contained within MotorModel require the use of SNOPT, which, u
 
 While the supporting MFEM and MISO libraries are made in C++, the code that is used to run an analysis is written in Python. Any work with Python must come after all of the above dependencies are installed.
 
-Python must be installed as a systems package. Another package, patch, is also required to install one of the dependencies. Patch is included with WSL, but may need to be manually installed if you are using another platform.
+Python must be installed as a series of systems packages. Another package, patch, is also required to install one of the dependencies. Patch is included with WSL, but may need to be manually installed if you are using another platform.
 
 ```
-sudo apt install python
+sudo apt install python3
+sudo apt install python3-pip
+sudo apt install python3-mpi4py
 sudo apt install patch
 ```
 
