@@ -18,7 +18,10 @@ Python must be installed as a series of systems packages. Another package, patch
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt install python3-mpi4py
+sudo apt install python3.10-venv
 sudo apt install patch
+sudo apt install swig
+sudo apt install libblas-dev liblapack-dev libopenblas-dev
 ```
 
 ## Environment Setup
@@ -46,12 +49,6 @@ pip install -e .
 
 cd ../Dependencies
 
-git clone https://github.com/tuckerbabcock/MotorModel.git
-cd MotorModel
-git checkout 12d953921a4dc926ac6ef31018de61f35b664014
-pip install -e .
-cd ..
-
 git clone https://github.com/tuckerbabcock/mphys.git
 cd mphys
 git checkout c67212caca8ecb4a934b4b4bb05c1989b7041f03
@@ -61,6 +58,12 @@ cd ..
 git clone https://github.com/tuckerbabcock/omESP.git
 cd omESP
 git checkout b421974a6932780f5b80096228cb2bcf0d63c931
+pip install -e .
+cd ..
+
+git clone https://github.com/tuckerbabcock/MotorModel.git
+cd MotorModel
+git checkout 12d953921a4dc926ac6ef31018de61f35b664014
 pip install -e .
 cd ../..
 ```
@@ -75,9 +78,10 @@ Enter the terminal and navigate to the motor folder. Use the following lines of 
 
 ```
 git clone https://github.com/OpenMDAO/build_pyoptsparse.git
-cd build_pyoptsparse/
+cd build_pyoptsparse
 pip install -e .
 python build_pyoptsparse.py -s '/[path_to_motor_folder]/SNOPT'
+export LD_LIBRARY_PATH=$VIRTUAL_ENV/lib
 cd ..
 ```
 
