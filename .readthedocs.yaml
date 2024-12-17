@@ -7,8 +7,7 @@ build:
 
 python:
   install:
-    - requirements: rtd/requirements.txt
+    - requirements: rtd/docs/requirements.txt
 
-sphinx:
-  configuration: rtd/source/conf.py
-  fail_on_warning: false
+mkdocs:
+  configuration: rtd/mkdocs.yml
