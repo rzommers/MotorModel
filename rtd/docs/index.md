@@ -4,7 +4,7 @@ This guide explains in a step-by-step approach the recommended way to install th
 
 The simulations within the MotorModel package use MISO, which is a C++ software library built on MFEM. Before continuing, MISO must be completely built, as well as MFEM and other dependencies.
 
-Go to [MISO Installation](https://miso-installation.readthedocs.io/en/latest/) to find a guide on setting up MISO. It is strongly recommended that all downloads and builds are completed in one folder so that the eventual Python environment will be able to find all of the installed dependencies. This guide assumes that the formatting is the same as what's recommended in the MISO guide. If you use this guide, make sure that MISO has its Python wrapper built by following the instructions.
+Go to [MISO Installation](https://miso-installation.readthedocs.io/en/latest/) to find a guide on setting up MISO. It is strongly recommended that all downloads and builds are completed in one folder so that the eventual Python environment will be able to find all of the installed dependencies. This guide assumes that the formatting is the same as what's recommended in the MISO guide. If you use this guide, make sure that you follow the instructions to incorporate Python functionality.
 
 Some of the tests contained within MotorModel require the use of SNOPT, which, unlike the other dependencies for this package, is not open-source, and must be purchased. See the [SNOPT Website](http://www.sbsi-sol-optimize.com/asp/sol_product_snopt.htm) for more information.
 
@@ -27,6 +27,8 @@ sudo apt install libblas-dev liblapack-dev libopenblas-dev
 ## Environment Setup
 
 A virtual environment must be made to be able to access Python libraries while in the terminal. All Python files must be kept in the same file location as the C++ dependencies.
+
+If a Python environment has already been created, skip this step.
 
 Enter the terminal and navigate to the motor folder. Use the following lines of code to create and activate a virtual Python environment.
 
